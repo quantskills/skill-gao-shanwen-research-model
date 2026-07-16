@@ -3,6 +3,31 @@ name: gao-shanwen-research-model
 description: Build and apply a Gao Shanwen-style China macro and capital-market research workflow from his books, public articles, and archived materials. Use when analyzing Chinese macro cycles, inflation, capacity cycles, real estate, shadow banking, RMB exchange rates, China equity strategy, asset revaluation theory, or when compiling Gao Shanwen bibliography and reading paths.
 ---
 
+```json qsh-form
+{
+  "version": 1,
+  "task": {
+    "placeholder": "填写中国宏观、资本市场、书目核验、阅读路径或文章检索问题",
+    "required": true
+  },
+  "fields": [
+    {
+      "key": "mode",
+      "label": "研究类型",
+      "type": "select",
+      "default": "analysis",
+      "options": [
+        { "value": "analysis", "label": "宏观与市场分析" },
+        { "value": "method", "label": "研究方法" },
+        { "value": "bibliography", "label": "书目与阅读路径" },
+        { "value": "article_lookup", "label": "公开文章检索" }
+      ]
+    }
+  ],
+  "prompt_template": "{{#task}}任务与材料：\n{{task}}\n\n{{/task}}{{#attachments}}用户上传的材料（已放入工作区）：\n{{attachments}}\n\n{{/attachments}}按高善文公开著作与文章所体现的研究框架完成 {{mode}} 任务，区分出版物、公开文章与当前外部数据三层证据，围绕现象、因果机制、可观测代理、竞争解释和证伪条件展开，不冒充本人、不作无来源的当代观点归因，输出中文报告。"
+}
+```
+
 # Gao Shanwen Research Model
 
 ## Core Use
